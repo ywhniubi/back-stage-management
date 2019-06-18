@@ -1,0 +1,412 @@
+*{
+  margin:0;
+  padding:0;
+}body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  /* css3 盒子模型, 好处: 设置宽高后, 如果有padding或者border 自动内减 */
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  font-family: 'microsoft yahei';
+  text-decoration: none;
+  /* 取消链接高亮 tap 轻触  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #333;
+}
+
+img {
+  width: 100%;
+  /*解决图片底部对齐问题*/
+  display: block;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+/* 解决图片下面留白的问题 */
+img {
+  vertical-align: top;
+}
+
+em,
+i,
+u {
+  font-style: normal;
+}
+
+/*去除边框*/
+fieldset,
+img,
+input,
+button,
+textarea {
+  border: none;
+  /*去除的蓝色小边框*/
+  outline-style: none;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* display: -webkit-box; */
+  /* 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。	 */
+
+  /* -webkit-box-orient: vertical; */
+  /* 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。 */
+
+  /* -webkit-line-clamp: 2; */
+  /* 用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。 */
+}
+
+/* 超出两行隐藏 */
+.txt-cut-2 {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 账单模块部分css */
+/* 模块一账单查询 */
+body {
+  background-color: #fff;
+}
+
+.topNavagitor {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+  margin-bottom: 0.3rem;
+}
+
+/* 头部导航栏样式 */
+.topNavagitor ul {
+  width: 100%;
+  height: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+
+.topNavagitor ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.topNavagitor ul li .fcousLine {
+  width: 0.4rem;
+  height: 0.05rem;
+  background: #f14d4d;
+  border-radius: 0.1rem;
+  margin-top: 0.17rem;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1 !important;
+}
+
+.disRow_y {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.disColumn_y {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.s_tx_y {
+  font-size: 0.35rem;
+  color: #333333;
+}
+
+.slideLine_y {
+  width: 100%;
+  height: 0.2rem;
+  background: #f4f4f4;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.switch_button {
+  background: #f14d4d;
+  border-radius: 1rem;
+  font-size: 12px;
+  width: 1rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  color: #fff;
+  display: block;
+  padding: 0 8px;
+  background: #f14d4d;
+  border-radius: 3rem;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
+  color: #fff;
+  margin-right: 0rem;
+}
+
+.switch_text {
+  display: block;
+  width: 100%;
+  color: #f14d4d;
+  font-size: 0.3rem;
+  text-align: center;
+}
+
+.switch_button .on {
+  background: #fff;
+  font-size: 0.34rem;
+  color: #f14d4d !important;
+  text-align: center;
+  position: relative;
+}
+
+.switch_button,
+.off {}
+
+.switch_circle {
+  border: solid 0.02rem #f14d4d;
+  position: relative;
+  height: 0.46rem;
+  width: 0.46rem;
+  position: absolute;
+  top: 50%;
+  left: -0.02rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  transition: left 0.2s linear 0s;
+}
+
+.switch_circle.right {
+  left: 55%;
+}
+
+.text_right {
+  position: absolute;
+  right: -0.29rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.text_left {
+  position: absolute;
+  left: -0.29rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.red_y {
+  color: #fff !important;
+}
+
+input:disabled {
+  background: none
+}
+
+.y_center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%)translateY(-50%);
+}
+
+.btn {
+  width: 6.9rem;
+  height: 0.88rem;
+  text-align: center;
+  margin: 0 auto;
+  background: #E60012;
+  border-radius: 1rem;
+  color: #fff;
+  margin-left: 0.25rem;
+  margin-top: 1rem;
+}
+
+.btnx {
+  width: 6.9rem;
+  height: 0.88rem;
+  text-align: center;
+  line-height: 0.88rem;
+  background-color: #fff;
+  background: #e60012;
+  border-radius: 1rem;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+}
+
+.btnx1 {
+  width: 6.9rem;
+  height: 0.88rem;
+  text-align: center;
+  line-height: 0.88rem;
+  background-color: #fff;
+  background: #cccccc;
+  border-radius: 1rem;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: 0.28rem;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  font-size: 0.28rem;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  font-size: 0.28rem;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-size: 0.28rem;
+}
